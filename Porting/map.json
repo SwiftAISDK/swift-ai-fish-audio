@@ -29,7 +29,8 @@
       "Tests/SwiftAIFishAudioTests/FishAudioSpeechModelTests.swift",
       "Tests/SwiftAIFishAudioTests/FishAudioTranscriptionModelTests.swift",
       "Tests/SwiftAIFishAudioTests/FixtureDownloadTransport.swift",
-      "Tests/SwiftAIFishAudioTests/TestSupport.swift"
+      "Tests/SwiftAIFishAudioTests/TestSupport.swift",
+      "Tests/SwiftAIFishAudioTests/Weekly20261101CredentialsTests.swift"
     ],
     "resources": []
   },
