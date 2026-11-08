@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-fish-audio",
-  "version": "1.1.0",
-  "releaseID": "weekly-upstream-20261101",
+  "version": "1.1.1",
+  "releaseID": "weekly-upstream-20261108",
   "source": {
-    "commit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
-    "baseCommit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
+    "commit": "8e233ff96fb809445aff9a5c06bb6149a24b94da",
+    "baseCommit": "8e233ff96fb809445aff9a5c06bb6149a24b94da",
     "workingTree": false,
-    "inputsSHA256": "b46f3e07b0a583d6fee81035987d74a06fc5c6109cbdf228144d1172d2c3676e"
+    "inputsSHA256": "987359720075cb67dd8bc45bdc049aee4c5d5a42b67a7eb148e697ce5d18bd77"
   },
   "dependencies": [
     {
@@ -17,29 +17,29 @@
   ],
   "changes": [
     {
-      "id": "weekly-upstream-20261101",
-      "notes": "Add native async throwing apiKeyProvider; resolve a fresh key immediately before every authenticated HTTP send/stream through the shared transport. Preserve static keys, custom header precedence, error/abort propagation, request builders and response parsers. TypeScript Resolvable/promise/function declarations map to an optional Sendable async closure. No other portable wire/runtime change was found in the published delta. Reviewed upstream: @ai-sdk/fish-audio 3.0.46 to 3.0.50. Validation passed: node Scripts/test-packages.mjs (all 52 owning package suites and the compatibility facade); node Scripts/sdk.mjs generate --check; node --test Scripts/tests/*.test.cjs (27 passed); docs-site check and build (100 pages). Live provider calls were not run.",
-      "compatibility": "Minor release for additive native API; existing static settings and call sites remain compatible. Updated direct dependency minimums are recorded in the manifest. Existing documented JS/framework and native product gaps remain; version-delta review does not imply full parity or live-service testing. Explicit custom authentication skips an unused credential supplier, a deliberate native callback-order adaptation."
+      "id": "weekly-upstream-20261108",
+      "notes": "Published sources, public declarations and exact-release tests unchanged. Published package metadata/dependency/bundle version refresh only. Update native versioned request user-agent; no new media/lifecycle API is introduced. Reviewed published upstream delta: @ai-sdk/fish-audio 3.0.50 to 3.0.54. Validation passed: node Scripts/test-packages.mjs (all 52 owning packages plus the complete local facade; 3,965 reported tests and 33 explicit live skips); node Scripts/sdk.mjs dev test; node Scripts/sdk.mjs generate --check; node --test Scripts/tests/*.test.cjs (27 passed); core/provider isolation and version resolution; 52 deterministic package exports, 106 catalog consumers and four additional exact retained-minimum graphs; docs-site install/check/build (100 pages); git diff --check. No paid live-service calls were run. The publication pipeline requires successful Swift 6.3.3 CI at the exact canonical source before publishing.",
+      "compatibility": "Patch release for behavior/header corrections without new required owning API. Existing call sites and exact old selectors are retained. Direct minimums change only for concrete API use or required inherited behavior. Version-delta review does not establish full-package parity or live-service acceptance."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-fish-audio",
   "upstream": [
     {
       "name": "@ai-sdk/fish-audio",
-      "reviewedVersion": "3.0.50",
+      "reviewedVersion": "3.0.54",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.fishAudio`, `FishAudioProvider`, `FishAudioSpeechModel`, `FishAudioTranscriptionModel`, `FishAudio*Tests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json",
+      "evidence": "`AIProviders.fishAudio`, `FishAudioProvider`, `FishAudioSpeechModel`, `FishAudioTranscriptionModel`, `FishAudio*Tests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json",
       "reviewStatus": "imported-reviewed-with-gaps",
-      "archiveIntegrity": "sha512-oYTRkNtS+25NTT/9LgKiHLFAvqiJUrZvZY3nwF3czn0UQ+yqxHqh0m5UDlAJ7b+j6f5bu6AWAkJ+UvkuahxGJg==",
-      "sourceRef": "npm:@ai-sdk/fish-audio@3.0.50",
-      "testRef": "9b603d36186b75e58d5479445a96c76f6e2d2700",
+      "archiveIntegrity": "sha512-dkMkOzezdt61PtneA9g9Qrha7yojVwuCMluu0Pazk9Vp5QJS91KNKr2MBig8hhr7sE2w+GhDVVQiFhF3TZ4Klw==",
+      "sourceRef": "npm:@ai-sdk/fish-audio@3.0.54",
+      "testRef": "0f3a85f92d1ce06ccde01d662407ef83e097a712",
       "testRefRelationship": "matching-release",
       "contractFamilies": [
         "ProviderV4",
         "SpeechModelV4",
         "TranscriptionModelV4"
       ],
-      "contractReview": "2026-11-01: published declarations, source and exact matching-release changed tests reviewed; scoped dispositions and Swift translations are in Docs/WeeklyUpstreamAudit20261101.json. Existing broader product gaps remain; reviewed delta is not full-package parity."
+      "contractReview": "2026-11-08: published declarations/source and exact matching-release changed tests reviewed; native implementations, per-file dispositions and broader retained gaps are recorded in Docs/WeeklyUpstreamAudit20261108.json. Reviewed delta is not full-package or live-service parity."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -74,7 +74,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-fish-audio/Sources/SwiftAIFishAudio/FishAudioProvider.swift",
-      "sha256": "c7451a018d0b9da9e07da1ab8d7443d9c35fd56aba84f043c41b82963dffeb5f"
+      "sha256": "9d85c6db019c318186bf292020b7dd98a8f700daf96f89d58d2e2723d2d0a975"
     },
     {
       "canonicalPath": "Packages/swift-ai-fish-audio/Sources/SwiftAIFishAudio/FishAudioProviderSettings.swift",
@@ -82,15 +82,15 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-fish-audio/Tests/SwiftAIFishAudioTests/FishAudioProviderTests.swift",
-      "sha256": "c63d799d77af0339d3e14e476b8cc39eff159cbf181d0d8e5f5f13d04743cf27"
+      "sha256": "7bc6390d1f7e8d84ea140ed18082020906662a58296db8eb7c626b4b0b772526"
     },
     {
       "canonicalPath": "Packages/swift-ai-fish-audio/Tests/SwiftAIFishAudioTests/FishAudioSpeechModelTests.swift",
-      "sha256": "a58c7d91d8927177ea878369d45ab7e93e448c44b37831a29d67f0ee45e4d4bb"
+      "sha256": "92c94a2cb314114886364794f6231af1670ae1c0bac5c6abe49e59827de43d4d"
     },
     {
       "canonicalPath": "Packages/swift-ai-fish-audio/Tests/SwiftAIFishAudioTests/FishAudioTranscriptionModelTests.swift",
-      "sha256": "74cfbedc6be6bbd2eee9d62e0402747294ce883eac4308f77a89c0e13806058e"
+      "sha256": "c74c5d24212fd01b5681a41547db6d32e64f77c77b4e43268ac479a3ab4d0e52"
     },
     {
       "canonicalPath": "Packages/swift-ai-fish-audio/Tests/SwiftAIFishAudioTests/FixtureDownloadTransport.swift",
