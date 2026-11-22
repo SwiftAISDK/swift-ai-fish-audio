@@ -1,5 +1,5 @@
 <!-- Generated distribution; edit the canonical repository. -->
-# swift-ai-fish-audio 1.1.2
+# swift-ai-fish-audio 1.1.3
 
 Independent Swift-native port of Vercel AI SDK. Source and upstream dispositions are in PROVENANCE.json and Porting/.
 
@@ -8,7 +8,7 @@ Independent Swift-native port of Vercel AI SDK. Source and upstream dispositions
 Add this package to your SwiftPM dependencies:
 
 ```swift
-.package(url: "https://github.com/SwiftAISDK/swift-ai-fish-audio.git", from: "1.1.2")
+.package(url: "https://github.com/SwiftAISDK/swift-ai-fish-audio.git", from: "1.1.3")
 ```
 
 Products: `SwiftAIFishAudio`.
@@ -16,25 +16,29 @@ Contribute and report issues in the canonical SwiftAISDK repository.
 
 ## Authored usage guide
 
-# SwiftAIFishAudio
+# Fish Audio for Swift
 
-Swift-native port of `@ai-sdk/fish-audio`. Maintained in the canonical SwiftAISDK repository and exported as an independent Swift package.
+`SwiftAIFishAudio` adds Fish Audio to [SwiftAISDK](https://github.com/SwiftAISDK/SwiftAISDK), an independent Swift port of the Vercel AI SDK. It ports `@ai-sdk/fish-audio` and supports transcription and speech.
+
+Provider guide with models, options, streaming and errors:
+
+- [Fish Audio](https://swiftaisdk.github.io/SwiftAISDK/providers/fish-audio/)
+
+## Usage
+
+Add the `SwiftAI` product from `swift-ai-core` and the `SwiftAIFishAudio` product from this package to your target, then create the provider:
 
 ```swift
+import SwiftAI
 import SwiftAIFishAudio
 
-let provider = try FishAudioProvider(configuration: .init(apiKey: "..."))
+let provider = try AIProviders.fishAudio(configuration: FishAudioProviderSettings())
 ```
 
-Settings accept a custom base URL, headers, query parameters and an injected
-`AITransport`. Models use the common SwiftAIProvider protocols. Existing upstream
-baselines, capabilities and documented gaps remain unchanged.
+By default the provider reads `FISH_AUDIO_API_KEY` from the environment; values set in `FishAudioProviderSettings` take precedence.
 
-Run the standalone suite from the canonical checkout:
+To use every provider through one dependency, add the complete [SwiftAISDK](https://github.com/SwiftAISDK/SwiftAISDK) package instead; see [Install](https://swiftaisdk.github.io/SwiftAISDK/getting-started/install/).
 
-```sh
-swift test --package-path Packages/swift-ai-fish-audio
-```
+## Contributing
 
-The canonical repository owns all edits. Distribution manifests and repositories
-are generated from the catalog; see `Porting/map.json` and the canonical provider guide.
+This package is exported from `Packages/swift-ai-fish-audio` in the canonical [SwiftAISDK](https://github.com/SwiftAISDK/SwiftAISDK) repository. Open issues and pull requests there.
